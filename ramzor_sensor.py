@@ -16,17 +16,14 @@ class Ramzor(SensorEntity):
     device_info = 'israely ramzor'
     unit_of_measurement = PERCENTAGE
     icon = None
-    should_poll = True
-    SCAN_INTERVAL = timedelta(seconds=5)
     native_value = None
 
     def __init__(self, city):
         self.city = city
         self.client = RamzorClient(city)
-        logging.getLogger("ramz").warning(city)
+        logging.getLogger("ramz").info(city)
 
 
     async def async_update(self):
-        logging.getLogger("ramz").warning("sending request")
         logging.getLogger("ramz").info("sending request info")
         self.native_value = await self.hass.async_add_executor_job(self.client.get_latest_grade)
