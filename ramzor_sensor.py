@@ -18,11 +18,11 @@ class Ramzor(SensorEntity):
     icon = None
     should_poll = True
     SCAN_INTERVAL = timedelta(seconds=5)
+    native_value = None
 
     def __init__(self, city):
         self.city = city
         self.client = RamzorClient(city)
-        self._native_value = None
         logging.getLogger("ramz").warning(city)
 
 
