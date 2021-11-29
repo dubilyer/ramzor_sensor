@@ -6,7 +6,7 @@ Original data source is https://corona.health.gov.il/ramzor/
 
 <ul>
     <li>Clone this project to your {config}/custom_components directory</li>
-    <li>Find your city code [here](https://github.com/dubilyer/ramzor_sensor/tree/master/city_scrapper/cities.csv)</li>
+    <li>Find your city code <a href="https://github.com/dubilyer/ramzor_sensor/tree/master/city_scrapper/cities.csv">here</a></li>
     <li>Add the following config tou your configuration.yml:
         <code>
             sensor:
