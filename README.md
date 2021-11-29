@@ -9,9 +9,9 @@ Original data source is https://corona.health.gov.il/ramzor/
     <li>Find your city code <a href="https://github.com/dubilyer/ramzor_sensor/tree/master/city_scrapper/cities.csv">here</a></li>
     <li>Add the following config tou your configuration.yml:
         <pre>
-            sensor:
-                - platform: ramzor_sensor
-                  city: {your_city_code}
+sensor:
+    - platform: ramzor_sensor
+      city: {your_city_code}
         </pre>
     </li>
     <li>Restart the HA</li>
