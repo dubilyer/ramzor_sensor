@@ -1,4 +1,4 @@
-<h1>Ramzor ( Israeli COVID19 Monitoring System ).</h1>
+<h1>Ramzor ( Israeli COVID19 Monitoring System ) integration.</h1>
 
 Original data source is https://corona.health.gov.il/ramzor/
 
