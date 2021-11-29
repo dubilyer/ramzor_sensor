@@ -29,4 +29,4 @@ class Ramzor(SensorEntity):
     async def async_update(self):
         logging.getLogger("ramz").warning("sending request")
         logging.getLogger("ramz").info("sending request info")
-        self._native_value = await self.hass.async_add_executor_job(self.client.get_latest_grade)
+        self.native_value = await self.hass.async_add_executor_job(self.client.get_latest_grade)
