@@ -13,6 +13,7 @@ sensor:
     - platform: ramzor_sensor
       city: {your_city_code}
         </pre>
+    Or just add the platform under the existing sensor tag if you already have one.
     </li>
     <li>Restart the HA</li>
 </ul>
