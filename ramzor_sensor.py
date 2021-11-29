@@ -10,21 +10,17 @@ from .ramzor_client import RamzorClient
 
 
 class Ramzor(SensorEntity):
-    name = 'ramzor'
-    unique_id = 'ramzor_123'
-    entity_id = 'ramzor.super_senor'
-    device_info = 'israely ramzor'
-    unit_of_measurement = PERCENTAGE
-    icon = None
     should_poll = True
+    unit_of_measurement = PERCENTAGE
     SCAN_INTERVAL = timedelta(seconds=5)
-    native_value = None
 
     def __init__(self, city):
         self.city = city
+        self._name = 'ramzor'
+        self.entity_id = 'ramzor.grade'
         self.client = RamzorClient(city)
-        logging.getLogger("ramz").warning(city)
+        logging.getLogger("ramz").info("ramzor is initialized with city ", city)
 
 
-    async def async_update(self):
-        self.native_value = await self.hass.async_add_executor_job(self.client.get_latest_grade)
+async def async_update(self):
+    self.native_value = await self.hass.async_add_executor_job(self.client.get_latest_grade)
