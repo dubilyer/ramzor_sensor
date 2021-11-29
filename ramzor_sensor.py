@@ -11,7 +11,8 @@ from .ramzor_client import RamzorClient
 
 class Ramzor(SensorEntity):
     name = 'ramzor'
-    entity_id = 'ramzor.super_senor'
+    unique_id = 'ramzor_11'
+    entity_id = 'ramzor.grade'
     device_info = 'israely ramzor'
     unit_of_measurement = PERCENTAGE
     native_value = None
