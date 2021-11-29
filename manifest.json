@@ -1,7 +1,7 @@
 {
-  "domain": "corona",
+  "domain": "ramzor_sensor",
   "name": "Ramzor Sensor",
-  "documentation": "https://github.com/dubilyer/ramzor_sensor",
+  "documentation": "https://github.com/dubilyer/ramzor_sensor/",
   "dependencies": [],
   "codeowners": [],
   "requirements": [],
