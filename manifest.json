@@ -2,9 +2,10 @@
   "domain": "sensor",
   "name": "Ramzor Sensor",
   "documentation": "https://github.com/dubilyer/ramzor_sensor/",
+  "issue_tracker": "https://github.com/dubilyer/ramzor_sensor/issues",
   "dependencies": [],
-  "codeowners": [],
+  "codeowners": ["https://github.com/dubilyer"],
   "requirements": [],
   "iot_class": "local_polling",
-  "version": "0.1.0"
+  "version": "1.0.1"
 }
