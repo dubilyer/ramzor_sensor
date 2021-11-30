@@ -1,5 +1,5 @@
 {
-  "domain": "ramzor_sensor",
+  "domain": "sensor",
   "name": "Ramzor Sensor",
   "documentation": "https://github.com/dubilyer/ramzor_sensor/",
   "dependencies": [],
