@@ -2,7 +2,7 @@
 
 Original data source is https://corona.health.gov.il/ramzor/
 
-<h4><i>! Attention, please make sure that you didn't miss the <a href=#config>configuration step</a> to configure city.</i></h4>
+<h4><i>! Attention, please make sure that you didn't miss the <a href=#config>configuration step</a> to configure city. Default one is Tel Aviv</i></h4>
 
 <h2>Installation:</h2>
 
