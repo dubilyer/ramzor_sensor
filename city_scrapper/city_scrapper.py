@@ -1,10 +1,11 @@
 import requests
 import csv
+import sys
+sys.path.append('../rest_client')
+from rest_client.ramzor_rest_client import get_suggestions
 
 def cities_by_letter(letter):
-    suggestions = requests\
-        .get('https://corona.health.gov.il/umbraco/surface/Traffic/AreaGetSuggestions?culture=he-IL&query={}'.format(letter))\
-        .json()['suggestions']
+    suggestions = get_suggestions(letter)
     cities = []
     for city in suggestions:
         cities.append(

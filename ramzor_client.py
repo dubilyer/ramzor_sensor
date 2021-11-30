@@ -1,13 +1,15 @@
 import requests
+import sys
+sys.path.append('../rest_client')
+from rest_client.ramzor_rest_client import get_data
 
 class RamzorClient:
-    URL = 'https://corona.health.gov.il/umbraco/surface/Traffic/RenderChartData?cityCode={}'
 
     def __init__(self, city):
         self.city = city
 
     def get_all_data(self):
-        return requests.get(self.URL.format(self.city)).json()
+        return get_data(self.city)
 
     def get_current(self):
         return self.get_all_data()['CurrentChart']

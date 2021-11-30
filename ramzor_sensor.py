@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import logging
-from datetime import timedelta
 
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.const import PERCENTAGE
