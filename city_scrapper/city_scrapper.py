@@ -22,7 +22,7 @@ def cities_by_letter(letter):
 
 def cities():
     cities = []
-    for letter in "א ב ג ד ה ו ז ח ט י כ ל מ נ ס ע פ צ ק ר ש ת":
+    for letter in "אבגדהוזחטיכלמנסעפצקרשת":
         cities = cities + cities_by_letter(letter)
     return cities
 
