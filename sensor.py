@@ -16,7 +16,7 @@ should_poll = True
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
-        vol.Required(CITY): cv.positive_int,
+        vol.Optional(CITY): cv.positive_int,
     }
 )
 
@@ -25,5 +25,6 @@ def setup_platform(
         config: ConfigType,
         add_entities: AddEntitiesCallback,
         discovery_info: DiscoveryInfoType):
+
     add_entities([Ramzor(config[CITY])], True)
 

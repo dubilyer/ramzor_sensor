@@ -17,7 +17,7 @@ class Ramzor(SensorEntity):
     unit_of_measurement = PERCENTAGE
     native_value = None
 
-    def __init__(self, city):
+    def __init__(self, city=5000):
         self.city = city
         self.client = RamzorClient(city)
         logging.getLogger("ramz").info(city)
