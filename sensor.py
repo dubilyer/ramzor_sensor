@@ -7,14 +7,15 @@ from datetime import timedelta
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback, EntityPlatform
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from homeassistant.components.sensor import PLATFORM_SCHEMA
 import homeassistant.helpers.config_validation as cv
 
+from .color_sensor import RamzorColor
 from .ramzor_sensor import Ramzor
-from homeassistant.components.sensor import PLATFORM_SCHEMA
 
 CITY= 'city'
 
-SCAN_INTERVAL = timedelta(seconds=5)
+SCAN_INTERVAL = timedelta(hours=5)
 should_poll = True
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
@@ -36,6 +37,9 @@ def setup_platform(
         config: ConfigType,
         add_entities: AddEntitiesCallback,
         discovery_info: DiscoveryInfoType):
-
-    add_entities([Ramzor(setUpCity(config))], True)
+    cty = setUpCity(config)
+    add_entities([
+        Ramzor(cty),
+        RamzorColor(cty)
+    ], True)
 

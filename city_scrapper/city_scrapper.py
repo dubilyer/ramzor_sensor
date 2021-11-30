@@ -1,7 +1,14 @@
-import requests
+from pathlib import Path
+
 import csv
 import sys
-sys.path.append('../rest_client')
+from pathlib import Path
+if __package__ is None:
+    DIR = Path(__file__).resolve().parent
+    print(DIR)
+    print(str(DIR.parent))
+    sys.path.insert(0, str(DIR.parent))
+    __package__ = DIR.name
 from rest_client.ramzor_rest_client import get_suggestions
 
 def cities_by_letter(letter):
@@ -15,7 +22,7 @@ def cities_by_letter(letter):
 
 def cities():
     cities = []
-    for letter in "א ב ג ד ה ו ז ח ט י כ ל מ נ ס ע פ צ ק ר ש ת":
+    for letter in "אבגדהוזחטיכלמנסעפצקרשת":
         cities = cities + cities_by_letter(letter)
     return cities
 
