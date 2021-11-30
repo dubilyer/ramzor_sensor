@@ -1,5 +1,11 @@
+from pathlib import Path
 import sys
-sys.path.append('../rest_client')
+if __package__ is None:
+    DIR = Path(__file__).resolve().parent
+    print(DIR)
+    print(str(DIR.parent))
+    sys.path.insert(0, str(DIR.parent))
+    __package__ = DIR.name
 from .rest_client.ramzor_rest_client import get_data
 
 class RamzorClient:
