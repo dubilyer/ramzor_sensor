@@ -2,6 +2,8 @@
 
 Original data source is https://corona.health.gov.il/ramzor/
 
+<h4><i>! Attention, please make sure that you didn't miss the <a href=#config>configuration step</a> to configure city.</i></h4>
+
 <h2>Installation:</h2>
 
 <h3>HACS installation:</h3>

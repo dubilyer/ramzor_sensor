@@ -1,4 +1,7 @@
 from __future__ import annotations
+
+import logging
+
 import voluptuous as vol
 from datetime import timedelta
 from homeassistant.core import HomeAssistant
@@ -20,11 +23,19 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     }
 )
 
+def setUpCity(config: ConfigType):
+    try:
+        city = config[CITY]
+    except KeyError:
+        logging.getLogger("ramzor.logger").warning("City is not configured, running on Tel Aviv. Please read the repostory documentation here: https://github.com/dubilyer/ramzor_sensor")
+        city = 5000 # default city is Tel Aviv
+    return city
+
 def setup_platform(
         hass: HomeAssistant,
         config: ConfigType,
         add_entities: AddEntitiesCallback,
         discovery_info: DiscoveryInfoType):
 
-    add_entities([Ramzor(config[CITY])], True)
+    add_entities([Ramzor(setUpCity(config))], True)
 
