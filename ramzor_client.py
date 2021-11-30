@@ -24,7 +24,7 @@ class RamzorClient:
         return self.get_current()['grades']
 
     def get_color(self):
-        return Colors(self.get_current()['color'])
+        return Colors(self.get_current()['color']).name
 
     def get_latest_grade(self):
         return self.get_grades()[0]
