@@ -1,7 +1,7 @@
 import requests
 import sys
 sys.path.append('../rest_client')
-from rest_client.ramzor_rest_client import get_data
+from .rest_client.ramzor_rest_client import get_data
 
 class RamzorClient:
 
