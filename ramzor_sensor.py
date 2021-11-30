@@ -9,7 +9,7 @@ from .ramzor_client import RamzorClient
 
 
 class Ramzor(SensorEntity):
-    name = 'ramzor'
+    name = 'ramzor_grade'
     unique_id = 'ramzor_11'
     entity_id = 'ramzor.grade'
     device_info = 'israely ramzor'

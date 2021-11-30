@@ -8,7 +8,7 @@ from .ramzor_client import RamzorClient
 
 
 class RamzorColor(SensorEntity):
-    name = 'ramzor'
+    name = 'ramzor_color'
     unique_id = 'ramzor_12'
     entity_id = 'ramzor.color'
     device_info = 'israely ramzor'
