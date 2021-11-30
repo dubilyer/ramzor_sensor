@@ -7,6 +7,7 @@ if __package__ is None:
     sys.path.insert(0, str(DIR.parent))
     __package__ = DIR.name
 from .rest_client.ramzor_rest_client import get_data
+from .colors import Colors
 
 class RamzorClient:
 
@@ -23,7 +24,7 @@ class RamzorClient:
         return self.get_current()['grades']
 
     def get_color(self):
-        return self.get_current()['cityPrognoseColor']
+        return Colors(self.get_current()['color'])
 
     def get_latest_grade(self):
         return self.get_grades()[0]
