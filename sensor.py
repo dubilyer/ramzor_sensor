@@ -13,7 +13,8 @@ import homeassistant.helpers.config_validation as cv
 from .color_sensor import RamzorColor
 from .ramzor_sensor import Ramzor
 
-CITY= 'city'
+CITY = 'city'
+CITIES = 'cities'
 
 SCAN_INTERVAL = timedelta(hours=5)
 should_poll = True
@@ -21,16 +22,21 @@ should_poll = True
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
         vol.Optional(CITY): cv.positive_int,
+        vol.Optional(CITIES): cv.ensure_list(cv.positive_int)
     }
 )
+
 
 def setUpCity(config: ConfigType):
     try:
         city = config[CITY]
     except KeyError:
-        logging.getLogger("ramzor.logger").warning("City is not configured, running on Tel Aviv. Please read the repostory documentation here: https://github.com/dubilyer/ramzor_sensor")
-        city = 5000 # default city is Tel Aviv
+        logging.getLogger("ramzor.logger").warning("City is not configured, running on Tel Aviv. Please read the "
+                                                   "repostory documentation here: "
+                                                   "https://github.com/dubilyer/ramzor_sensor")
+        city = 5000  # default city is Tel Aviv
     return city
+
 
 def setup_platform(
         hass: HomeAssistant,
@@ -42,4 +48,3 @@ def setup_platform(
         Ramzor(cty),
         RamzorColor(cty)
     ], True)
-
