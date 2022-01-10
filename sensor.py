@@ -27,7 +27,15 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
 )
 
 
-def setUpCity(config: ConfigType):
+def setup_cities(config: ConfigType):
+    try:
+        cities = config[CITIES]
+    except KeyError:
+        cities = [setup_cities(config)]
+    return cities
+
+
+def setup_city(config: ConfigType):
     try:
         city = config[CITY]
     except KeyError:
@@ -43,8 +51,9 @@ def setup_platform(
         config: ConfigType,
         add_entities: AddEntitiesCallback,
         discovery_info: DiscoveryInfoType):
-    cty = setUpCity(config)
-    add_entities([
-        Ramzor(cty),
-        RamzorColor(cty)
-    ], True)
+    cities = setup_cities(config)
+    for cty in cities:
+        add_entities([
+            Ramzor(cty),
+            RamzorColor(cty)
+        ], True)
