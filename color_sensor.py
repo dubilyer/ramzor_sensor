@@ -9,13 +9,15 @@ from .ramzor_client import RamzorClient
 
 class RamzorColor(SensorEntity):
     name = 'ramzor_color'
-    unique_id = 'ramzor_12'
     device_info = 'israely ramzor'
+    unique_id = ''
+    entity_id = ''
     native_value = None
 
     def __init__(self, city):
         self.city = city
-        entity_id = 'ramzor.color_{}'.format(city)
+        self.entity_id = 'ramzor.color_{}'.format(city)
+        self.unique_id = 'ramzor.color_{}'.format(city)
         self.client = RamzorClient(city)
         logging.getLogger("ramz").info(city)
 
