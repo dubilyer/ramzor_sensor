@@ -68,4 +68,4 @@ That's an example of the config:
 
 As a result having a percentage info and an icon colored in the corona state color:
 
-![](https://github.com/dubilyer/ramzor_sensor/blob/multi_city/card.png?raw=true)
+![](https://github.com/dubilyer/ramzor_sensor/blob/master/card.png?raw=true)
