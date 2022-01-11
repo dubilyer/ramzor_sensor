@@ -51,7 +51,7 @@ I really love the idea of using it with `custom:button-card` (https://github.com
 
 That's an example of the config:
 
-<pre>
+<pre>```
   - type: custom:button-card
     icon: mdi:virus
     name: |
@@ -64,7 +64,7 @@ That's an example of the config:
             [[[
               return states["sensor.color_2640"].state;
             ]]]
-</pre>
+```</pre>
 
 As a result having a percentage info and an icon colored in the corona state color:
 
