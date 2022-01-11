@@ -65,3 +65,7 @@ That's an example of the config:
               return states["sensor.color_2640"].state;
             ]]]
 </pre>
+
+As a result having a percentage info and an icon colored in the corona state color:
+
+![](https://github.com/dubilyer/ramzor_sensor/blob/multi_city/card.png?raw=true)
