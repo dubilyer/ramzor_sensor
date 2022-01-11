@@ -51,17 +51,17 @@ I really love the idea of using it with `custom:button-card` (https://github.com
 
 That's an example of the config:
 
-<code>
-- type: custom:button-card
-        icon: mdi:virus
-        name: |
-          [[[
-            return `<span style="font-size: 3em; color:${states['sensor.color_2640'].state}">${states["sensor.grade_2640"].state}%</span>`;
-          ]]]
-        styles:
-          icon:
-            - color: |
-                [[[
-                  return states["sensor.color_2640"].state;
-                ]]]
-</code>
+<pre>
+  - type: custom:button-card
+    icon: mdi:virus
+    name: |
+      [[[
+        return `<span style="font-size: 3em; color:${states['sensor.color_2640'].state}">${states["sensor.grade_2640"].state}%</span>`;
+      ]]]
+    styles:
+      icon:
+        - color: |
+            [[[
+              return states["sensor.color_2640"].state;
+            ]]]
+</pre>
