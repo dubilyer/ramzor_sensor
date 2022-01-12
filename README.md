@@ -1,5 +1,4 @@
-![](https://corona.health.gov.il/media/3tsb23de/group-9-copy-5-3x.png) ![](https://www.home-assistant.io/images/home-assistant-logo.svg =250x250)
-
+![](https://github.com/dubilyer/ramzor_sensor/blob/readme/ramzor1.png?raw=true)
 
 <h1>Ramzor ( Israeli COVID19 Monitoring System ) integration.</h1>
 
