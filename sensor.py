@@ -4,9 +4,8 @@ import logging
 
 import voluptuous as vol
 from datetime import timedelta
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback, EntityPlatform
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from homeassistant.helpers.entity_platform import AddEntitiesCallback
+from homeassistant.helpers.typing import ConfigType
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 import homeassistant.helpers.config_validation as cv
 
@@ -40,17 +39,15 @@ def setup_city(config: ConfigType):
         city = config[CITY]
     except KeyError:
         logging.getLogger("ramzor.logger").warning("City is not configured, running on Tel Aviv. Please read the "
-                                                   "repostory documentation here: "
+                                                   "repository documentation here: "
                                                    "https://github.com/dubilyer/ramzor_sensor")
         city = 5000  # default city is Tel Aviv
     return city
 
 
 def setup_platform(
-        hass: HomeAssistant,
         config: ConfigType,
-        add_entities: AddEntitiesCallback,
-        discovery_info: DiscoveryInfoType):
+        add_entities: AddEntitiesCallback):
     cities = setup_cities(config)
     for cty in cities:
         add_entities([

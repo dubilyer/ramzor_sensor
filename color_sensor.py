@@ -19,9 +19,8 @@ class RamzorColor(SensorEntity):
         self.entity_id = 'ramzor.color_{}'.format(city)
         self.unique_id = 'ramzor.color_{}'.format(city)
         self.client = RamzorClient(city)
-        logging.getLogger("ramz").info(city)
-
+        logging.getLogger("ramzor.logger").info(city)
 
     async def async_update(self):
-        logging.getLogger("ramz").info("sending request info")
+        logging.getLogger("ramzor.logger").info("sending request info")
         self.native_value = await self.hass.async_add_executor_job(self.client.get_color)

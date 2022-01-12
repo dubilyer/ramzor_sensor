@@ -9,6 +9,7 @@ if __package__ is None:
 from .rest_client.ramzor_rest_client import get_data
 from .colors import Colors
 
+
 class RamzorClient:
 
     def __init__(self, city):
