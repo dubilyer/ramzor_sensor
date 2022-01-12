@@ -1,4 +1,6 @@
-![](https://github.com/dubilyer/ramzor_sensor/blob/readme/ramzor1.png?raw=true)
+<p align="center">
+  <img src="https://github.com/dubilyer/ramzor_sensor/blob/readme/ramzor1.png?raw=true">
+</p>
 
 <h1>Ramzor ( Israeli COVID19 Monitoring System ) integration.</h1>
 
