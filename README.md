@@ -1,3 +1,6 @@
+![](https://corona.health.gov.il/media/3tsb23de/group-9-copy-5-3x.png) ![](https://www.home-assistant.io/images/home-assistant-logo.svg =250x250)
+
+
 <h1>Ramzor ( Israeli COVID19 Monitoring System ) integration.</h1>
 
 Original data source is https://corona.health.gov.il/ramzor/
