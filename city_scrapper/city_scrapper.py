@@ -9,6 +9,7 @@ if __package__ is None:
     __package__ = DIR.name
 from rest_client.ramzor_rest_client import get_suggestions
 
+
 def cities_by_letter(letter):
     suggestions = get_suggestions(letter)
     cities = []
@@ -18,16 +19,19 @@ def cities_by_letter(letter):
         )
     return cities
 
+
 def cities():
     cities = []
     for letter in "אבגדהוזחטיכלמנסעפצקרשת":
         cities = cities + cities_by_letter(letter)
     return cities
 
+
 def write_cities():
     with open('cities.csv', 'w', encoding='UTF8') as file:
         writer = csv.writer(file)
         writer.writerow(['Hebrew name', 'English name', 'code'])
         writer.writerows(cities())
+
 
 write_cities()
