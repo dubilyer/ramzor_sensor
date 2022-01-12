@@ -27,15 +27,48 @@ Original data source is https://corona.health.gov.il/ramzor/
 
 <h3 id=config>Configuration</h3>
 <ul>
-<li>Find your city code <a href="https://github.com/dubilyer/ramzor_sensor/tree/master/city_scrapper/cities.csv">here</a></li>
+<li>Find city codes <a href="https://github.com/dubilyer/ramzor_sensor/tree/master/city_scrapper/cities.csv">here</a></li>
     <li>Add the following config tou your configuration.yml:
         <pre>
 sensor:
     - platform: ramzor_sensor
-      city: {your_city_code}
+      cities: 
+        - {city_code_1}
+        - {city_code_2}
+            . . .
+        - {city_code_3}
         </pre>
     Or just add the platform under the existing sensor tag if you already have one.
     </li>
 </ul>
 
-As a result you should have a sensor.grade in the device list with the % percent of infected in your city as a state.
+As a result you should have a couple of sensors with the following naming convention:
+ <pre>
+    sensor.grade_{city_code_1}
+    sensor.color_{city_code_1}
+ </pre>
+
+<h3 id=config>UI representation</h3>
+
+I really love the idea of using it with `custom:button-card` (https://github.com/custom-cards/button-card).
+
+That's an example of the config:
+
+<pre>
+  - type: custom:button-card
+    icon: mdi:virus
+    name: |
+      [[[
+        return `&ltspan style="font-size: 3em; color:${states['sensor.color_2640'].state}"&gt${states["sensor.grade_2640"].state}%&lt/span&gt`;
+      ]]]
+    styles:
+      icon:
+        - color: |
+            [[[
+              return states["sensor.color_2640"].state;
+            ]]]
+</pre>
+
+As a result having a percentage info and an icon colored in the corona state color:
+
+![](https://github.com/dubilyer/ramzor_sensor/blob/master/card.png?raw=true)
