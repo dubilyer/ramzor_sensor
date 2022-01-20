@@ -4,7 +4,7 @@ import logging
 
 from homeassistant.components.sensor import SensorEntity
 
-from .ramzor_client import RamzorClient
+from ramzor_client import RamzorClient
 
 
 class RamzorColor(SensorEntity):

@@ -6,8 +6,8 @@ if __package__ is None:
     print(str(DIR.parent))
     sys.path.insert(0, str(DIR.parent))
     __package__ = DIR.name
-from .rest_client.ramzor_rest_client import get_data
-from .colors import Colors
+from custom_components.ramzor_sensor.rest_client.ramzor_rest_client import get_data
+from custom_components.ramzor_sensor.colors import Colors
 
 
 class RamzorClient:

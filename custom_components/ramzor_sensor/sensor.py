@@ -9,8 +9,8 @@ from homeassistant.helpers.typing import ConfigType
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 import homeassistant.helpers.config_validation as cv
 
-from .color_sensor import RamzorColor
-from .ramzor_sensor import Ramzor
+from custom_components.ramzor_sensor.color_sensor import RamzorColor
+from custom_components.ramzor_sensor.ramzor_sensor import Ramzor
 
 CITY = 'city'
 CITIES = 'cities'

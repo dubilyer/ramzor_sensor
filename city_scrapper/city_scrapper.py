@@ -7,7 +7,7 @@ if __package__ is None:
     print(str(DIR.parent))
     sys.path.insert(0, str(DIR.parent))
     __package__ = DIR.name
-from rest_client.ramzor_rest_client import get_suggestions
+from custom_components.ramzor_sensor.rest_client import get_suggestions
 
 
 def cities_by_letter(letter):
