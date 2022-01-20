@@ -1,5 +1,5 @@
 {
-  "domains": "sensor",
+  "domains": "ramzor_sensor",
   "name": "Ramzor Sensor",
   "content_in_root": true,
   "country": ["IL"],
